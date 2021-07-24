@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/create_students', [apiStudentController::class, 'create']);
+Route::post('/create_student', [apiStudentController::class, 'create']);
 Route::get('/show-students', [apiStudentController::class, 'show']);
-Route::get('/show-students/{id}', [apiStudentController::class, 'showById']);
+Route::get('/show-student/{id}', [apiStudentController::class, 'showById']);
+Route::put('/update-student/{id}', [apiStudentController::class, 'update']);
+Route::delete('/delete-student/{id}', [apiStudentController::class, 'delete']);
