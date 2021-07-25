@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\DropdownController;
+use App\Http\Controllers\ExcelExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +57,8 @@ Route::group(["middleware"=>"web"], function(){
     // return view('welcome');
     Larademo::sayHello();   // Created Facade for testing..
     });
+
+    // Export Data from students table
+    Route::get('studentExport',[ExcelExportController::class, 'StudentExport']);
 
 });

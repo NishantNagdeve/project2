@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\LarademoServiceProvider::class,   // Created Facade for testing..
+        Maatwebsite\Excel\ExcelServiceProvider::class,  // Created ExcelExport Provider.. 
 
     ],
 
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Larademo' => App\Larademo\LarademoFacade::class,     // Created Facade for testing..
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,    // Created ExcelExport Provider.. 
 
     ],
 
