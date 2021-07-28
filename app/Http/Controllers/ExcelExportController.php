@@ -3,24 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
 use Excel;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use App\Exports\studentsExport;
 
 class ExcelExportController extends Controller
 {
-    //
     public function StudentExport() 
     {
-        return Excel::download(new StudentExport, 'student.xlsx');
+        // return Excel::download(new StudentsExport, 'Student.xlsx');
+        // return (new StudentsExport)->download('Student.pdf', \Maatwebsite\Excel\Excel::XLSX);
+        return (new StudentsExport(2020))->download('invoices.xlsx');
     }
-}
 
-
-class StudentExport implements FromCollection
-{
-    public function collection()
-    {
-        return Student::all();
-    }
 }
